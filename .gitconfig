@@ -1,0 +1,8 @@
+[user]
+	email = davidchoo16@gmail.com
+	name = David Choo
+[core]
+	editor = nvim
+	excludesfile = /home/david/.gitignore_global
+[help]
+	autocorrect = 1
