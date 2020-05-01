@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "editor.fontFamily": "Inconsolata-g for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+}

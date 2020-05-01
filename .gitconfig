@@ -1,8 +1,19 @@
 [user]
-	email = davidchoo16@gmail.com
+	email = 7817101+davidchoo12@users.noreply.github.com
 	name = David Choo
+	signingkey = 5D173BA0C84E35E5
 [core]
 	editor = nvim
-	excludesfile = /home/david/.gitignore_global
+	excludesfile = /Users/dchoo/.gitignore_global
 [help]
 	autocorrect = 1
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

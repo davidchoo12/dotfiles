@@ -121,6 +121,9 @@ nnoremap <C-7> 7gt
 nnoremap <C-8> 8gt
 nnoremap <C-9> 1gtgT
 
+" space for repeating macros at q
+nnoremap <space> @q
+
 ""  Preserve history.
 ""
 ""  Set history cap to 10,000 entries back.
@@ -151,7 +154,9 @@ highlight CursorLine term=bold cterm=bold
 set wildmenu
 
 ""  Improve search
+" search ignore case
 ""
+set ignorecase
 ""  Search as characters are entered.
 ""
 set incsearch
@@ -272,5 +277,5 @@ nnoremap gV `[v`]
 ""
 ""  Open/close folds.
 ""
-nnoremap <space> za
+" nnoremap <space> za
 
