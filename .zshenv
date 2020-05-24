@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/dchoo/.config/oh-my-zsh"
+export ZSH="$HOME/.config/oh-my-zsh"
 
 # for homebrew
 export PATH=$PATH:$HOME/bin:/usr/local/bin
@@ -26,7 +26,7 @@ export LC_ALL=en_US.UTF-8
 export PATH="$PATH:$HOME/.rbenv/bin"
 
 # for pyenv (shims need to be before /usr/bin otherwise $(which python3) eval to /usr/bin/python3)
-eval "$(pyenv init -)"
+command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
 # for java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home

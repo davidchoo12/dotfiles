@@ -69,7 +69,7 @@ unsetopt share_history
 [ -f /Users/dchoo/.travis/travis.sh ] && source /Users/dchoo/.travis/travis.sh
 
 # for rbenv
-eval "$(rbenv init - zsh)"
+command -v rbenv >/dev/null 2>&1 && eval "$(rbenv init - zsh)"
 
 # for gpg commit signature
 # export GPG_TTY=$(tty)
