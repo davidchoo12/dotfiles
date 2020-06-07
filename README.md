@@ -58,4 +58,16 @@ sudo apt install neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # run :PlugInstall and exit
 nvim +PlugInstall +qall > /dev/null
+
+# fonts
+# install Segoe UI, src https://github.com/mrbvrz/segoe-ui-linux
+# install meslo nerd font for p10k https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k
+# found UI bug in gnome-font-viewer https://github.com/microsoft/cascadia-code/issues/50#issuecomment-633187177
+# use gnome-tweaks fonts to update system fonts
+
+# compton
+sudo apt install compton
+# restarting compton
+pkill compton
+compton --config ~/.config/compton/compton.conf -b
 ```
