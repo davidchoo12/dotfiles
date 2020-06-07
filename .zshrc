@@ -11,7 +11,7 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins list
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent ssh-agent aws dotenv)
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent ssh-agent aws dotenv extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,3 +82,5 @@ if [ -f '/Users/dchoo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dchoo/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dchoo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dchoo/google-cloud-sdk/completion.zsh.inc'; fi
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh

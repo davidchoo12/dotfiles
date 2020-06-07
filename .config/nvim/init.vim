@@ -12,6 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " autopairs, fzf, ... check donjar/vim-workshop
 " the plugin below was installed and is yet to be removed, the installation took a long time and has many dependencies, so i decided to use a more lightweight autocomplete plugin
 " to use it, just uncomment

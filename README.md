@@ -103,4 +103,10 @@ fc-cache -v
 # skip these cos alr in this repo
 # cp -r * ~/.config/polybar
 # ~/.config/polybar/launch.sh
+
+# fzf
+# check installation method https://github.com/junegunn/fzf#installation
+# install from git
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all --xdg --no-bash --64
 ```
