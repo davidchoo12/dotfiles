@@ -1,7 +1,7 @@
 [user]
 	email = 7817101+davidchoo12@users.noreply.github.com
 	name = David Choo
-	signingkey = 5D173BA0C84E35E5
+	signingkey = F11F77AC9209DAE0 # on personal ubuntu
 [core]
 	editor = nvim
 	excludesfile = /Users/dchoo/.gitignore_global
