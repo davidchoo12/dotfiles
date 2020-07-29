@@ -11,3 +11,5 @@ alias pip="pip3"
 # alias sdev="ssh -A ubuntu@10.0.0.85"
 alias sdev="ssh -A dchoo.zdi.zendesk-dev.com"
 alias py="python"
+alias pssh='/Users/dchoo/Library/Python/3.7/bin/pssh -x "-o LogLevel=QUIET -o StrictHostKeyChecking=no -o UserKnownHostsFile=/tmp/UserKnownHostsFile.csv  -o GlobalKnownHostsFile=/tmp/GlobalKnownHostsFile.csv"'
+alias psshsudo='/Users/dchoo/Library/Python/3.7/bin/pssh --inline -I -x "-o LogLevel=QUIET -o StrictHostKeyChecking=no -o UserKnownHostsFile=/tmp/UserKnownHostsFile.csv  -o GlobalKnownHostsFile=/tmp/GlobalKnownHostsFile.csv -tt"'
