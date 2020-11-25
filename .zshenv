@@ -15,9 +15,9 @@ export LC_ALL=en_US.UTF-8
 # not sure if this is needed: source /home/david/.rvm/scripts/rvm
 
 # add paths for texlive following https://tex.stackexchange.com/a/95373
-# export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-# export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
-# export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
+export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+export INFOPATH=$INFOPATH:/usr/local/texlive/2019/texmf-dist/doc/info
+export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
 
 # for artifactory
 # export PATH=$PATH:$HOME/development/artifactory-oss-6.17.0/bin
@@ -34,3 +34,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 # for setting dotenv to always (see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv)
 export ZSH_DOTENV_PROMPT=false
+export NVM_DIR="$HOME/.nvm"
+
+# for alacritty
+export PATH="$PATH:$HOME/.cargo/bin"
