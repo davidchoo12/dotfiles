@@ -34,3 +34,4 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 # for setting dotenv to always (see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv)
 export ZSH_DOTENV_PROMPT=false
+source "$HOME/.cargo/env"
