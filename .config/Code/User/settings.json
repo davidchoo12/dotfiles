@@ -6,4 +6,7 @@
     "editor.tabSize": 2,
     "git.autofetch": true,
     "window.zoomLevel": 0,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
 }

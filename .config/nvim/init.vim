@@ -10,8 +10,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " autopairs, fzf, ... check donjar/vim-workshop
 " the plugin below was installed and is yet to be removed, the installation took a long time and has many dependencies, so i decided to use a more lightweight autocomplete plugin
@@ -20,14 +22,22 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'ajh17/vimcompletesme'
 " Plug 'mattn/emmet-vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" tsx syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'eslint/eslint'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
+" gruvbox colorscheme
+colorscheme gruvbox
 " vim-colors-solarized
-set background=dark
-let g:solarized_termcolors=256
+" set background=dark
+" let g:solarized_termcolors=256
 " let g:solarized_visibility="high"
-colorscheme solarized
+" colorscheme solarized
 
 " closing special chars
 function! ConditionalPairMap(open, close)
@@ -60,6 +70,20 @@ inoremap {<CR> {<CR>}<ESC>O
 
 " map ctrl n to nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" show hidden files
+let g:NERDTreeShowHidden = 1
+
+" ale configs
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'typescript': ['eslint'],
+\  'typescriptreact': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
 
 " map ctrl backspace to delete word
 " inoremap <del> <esc>dbi
@@ -85,6 +109,12 @@ nnoremap <S-j> 7j
 nnoremap <S-k> 7k
 vnoremap <S-j> 7j
 vnoremap <S-k> 7k
+
+" map for navigating splits
+noremap <C-h> <esc><C-w>h
+noremap <C-j> <esc><C-w>j
+noremap <C-k> <esc><C-w>k
+noremap <C-l> <esc><C-w>l
 
 " autocomplete css
 set omnifunc=syntaxcomplete#Complete
@@ -202,7 +232,7 @@ set number
 
 ""  Turn on relative numbering.
 ""
-set relativenumber
+" set relativenumber
 
 ""  Set the line numbers to 4 spaces.
 ""

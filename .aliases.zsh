@@ -14,5 +14,6 @@ alias snus="ssh nus"
 alias sprod="ssh aws-prod"
 alias sstg="ssh aws-stg"
 alias py="python"
+alias r="ranger"
 alias pssh='/Users/dchoo/Library/Python/3.7/bin/pssh -x "-o LogLevel=QUIET -o StrictHostKeyChecking=no -o UserKnownHostsFile=/tmp/UserKnownHostsFile.csv  -o GlobalKnownHostsFile=/tmp/GlobalKnownHostsFile.csv"'
 alias psshsudo='/Users/dchoo/Library/Python/3.7/bin/pssh --inline -I -x "-o LogLevel=QUIET -o StrictHostKeyChecking=no -o UserKnownHostsFile=/tmp/UserKnownHostsFile.csv  -o GlobalKnownHostsFile=/tmp/GlobalKnownHostsFile.csv -tt"'
