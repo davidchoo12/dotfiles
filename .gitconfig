@@ -1,7 +1,7 @@
 [user]
-	email = 7817101+davidchoo12@users.noreply.github.com
+	email = david.choo@shopee.com
 	name = David Choo
-	signingkey = F11F77AC9209DAE0 # on personal ubuntu
+	signingkey = 65EBFA012100CC8F
 [core]
 	editor = nvim
 	excludesfile = /Users/dchoo/.gitignore_global
@@ -19,3 +19,17 @@
 	trustExitCode = true
 [pull]
 	rebase = false
+[url "gitlab@git.garena.com:"]
+	insteadOf = https://git.garena.com
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	syntax-theme = zenburn
+	line-numbers = true
+	side-by-side = true
+	navigate = true
+[interactive]
+	diffFilter = delta --color-only
