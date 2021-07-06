@@ -35,8 +35,19 @@ export PATH=$PATH:$JAVA_HOME/bin
 # for setting dotenv to always (see https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv)
 export ZSH_DOTENV_PROMPT=false
 
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 export NVM_DIR="$HOME/.nvm"
 
 # for alacritty
 export PATH="$PATH:$HOME/.cargo/bin"
+
+# for golang
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# for python
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+# for local development
+export ENV=dev
