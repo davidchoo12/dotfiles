@@ -14,6 +14,15 @@ These files are positioned in dirs for Ubuntu but contains configs that also wor
 ## Installation
 
 ```
+# zsh
+sudo apt install -y zsh
+# install.sh runs chsh which requires passwd to be set, see https://askubuntu.com/a/1100194/973343
+ZSH=~/.config/oh-my-zsh KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+chsh -s $(which zsh) # requires relogin to take effect
+
 # git, src https://git-scm.com/download/linux
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
@@ -41,14 +50,6 @@ gpg --armor --export #<secret key id>
 # copy output and add to GPG keys at https://github.com/settings/keys
 # add to global .gitconfig, src https://help.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key
 git config --global user.signingkey #<secret key id>
-
-# zsh
-sudo apt install -y zsh
-# install.sh runs chsh which requires passwd to be set, see https://askubuntu.com/a/1100194/973343
-ZSH=~/.config/oh-my-zsh KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # neovim
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -109,4 +110,11 @@ fc-cache -v
 # install from git
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --xdg --no-bash --64
+
+# for macos, add symbolic links to open apps from terminal
+ln -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' /usr/local/bin/subl
+ln -s '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
 ```
+
+## List of softwares to install
+- [delta (pretty diff tool)](https://github.com/dandavison/delta/)

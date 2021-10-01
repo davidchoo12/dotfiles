@@ -19,3 +19,15 @@
 	trustExitCode = true
 [pull]
 	rebase = false
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	syntax-theme = zenburn
+	line-numbers = true
+	side-by-side = false
+	navigate = true
+[interactive]
+	diffFilter = delta --color-only

@@ -38,6 +38,7 @@ Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'SirVer/ultisnips'
 Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
