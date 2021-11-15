@@ -4,7 +4,7 @@
 	signingkey = F11F77AC9209DAE0 # on personal ubuntu
 [core]
 	editor = nvim
-	excludesfile = /Users/dchoo/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [help]
 	autocorrect = 1
 [commit]

@@ -271,7 +271,7 @@ set shiftwidth=2
 " softtabstop=5:^123  1    $
 set softtabstop=2
 " number of spaces that a tab char accounts for, set equal to shiftwidth else pressing tab will insert mix of tab and space
-"set tabstop=2
+set tabstop=2
 " copy indent from current line when starting a new line
 set autoindent
 " show whitespaces
@@ -279,8 +279,9 @@ set list
 set listchars=eol:↓,tab:>-,space:·,trail:·,nbsp:‡,extends:»,precedes:«
 " filetype specific indentation settings
 filetype plugin indent on
-autocmd FileType python setlocal softtabstop=4 shiftwidth=4
+autocmd FileType python setlocal softtabstop=2 shiftwidth=2
 autocmd FileType cpp setlocal softtabstop=4 shiftwidth=4
+autocmd FileType go setlocal softtabstop=2 shiftwidth=2 noexpandtab
 
 " press 'fd' fast in insert and visual mode to escape.
 inoremap fd <esc>
