@@ -13,7 +13,7 @@ These files are positioned in dirs for Ubuntu but contains configs that also wor
 
 ## Installation
 
-```
+```bash
 # zsh
 sudo apt install -y zsh
 # install.sh runs chsh which requires passwd to be set, see https://askubuntu.com/a/1100194/973343

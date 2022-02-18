@@ -2,7 +2,7 @@ function open () {
   xdg-open "$*" &
 }
 alias v="nvim"
-alias dfg='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' # dotfiles git
+alias dfg='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME -c status.showuntrackedfiles=no' # dotfiles git
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias zshconfig="nvim ~/.zshrc"
 alias m="ncmpcpp"
