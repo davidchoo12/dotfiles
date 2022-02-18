@@ -5,6 +5,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes_global
 [help]
 	autocorrect = 1
 [commit]
@@ -31,3 +32,5 @@
 	navigate = true
 [interactive]
 	diffFilter = delta --color-only
+[filter "removeprintln"]
+	clean = sed '/println/d'

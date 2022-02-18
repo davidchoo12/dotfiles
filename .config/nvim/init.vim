@@ -309,3 +309,5 @@ set whichwrap=b,s,h,l,<,>
 set splitright
 " scroll offset - lines to preview at top and bottom of buffer when navigating up and down, big number to keep cursor in middle
 set scrolloff=999
+" disable adding newline on end of file on save
+set nofixendofline
