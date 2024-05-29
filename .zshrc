@@ -11,7 +11,7 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins list
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent ssh-agent aws dotenv extract docker docker-compose nvm)
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent aws dotenv extract nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +47,9 @@ autoload -U colors && colors
 # misc customizations
 # disable shared history across instances of zsh
 unsetopt share_history
+# save all history
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
 
 #################################################
 ### Colorize Man pages

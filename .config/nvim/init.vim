@@ -3,6 +3,13 @@ set nocompatible
 " disable splashscreen
 set shortmess=I
 
+" Figure out the system Python for Neovim for UltiSnips to work, src https://github.com/neovim/neovim/issues/1887#issuecomment-280653872
+if exists("$VIRTUAL_ENV")
+    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
+else
+    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 " run :PlugInstall after adding new plugin below to install
 " :PlugUpdate to update
@@ -10,7 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 " Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -28,11 +35,15 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'eslint/eslint'
 Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
+Plug 'SirVer/ultisnips'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
-" gruvbox colorscheme
-colorscheme gruvbox
+" onedark colorscheme, alternate option gruvbox
+colorscheme onedark
 " vim-colors-solarized
 " set background=dark
 " let g:solarized_termcolors=256
@@ -84,6 +95,11 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " map ctrl backspace to delete word
 " inoremap <del> <esc>dbi
@@ -242,49 +258,32 @@ set numberwidth=4
 ""
 set hidden
 
-""  You use tabs? Ew.
-""
-""  Set number of visual spaces per TAB to 4.
-""
-set tabstop=2
-""  Set number of spaces inserted per TAB when editing to 2.
-""
-set softtabstop=0
-""  Use the TAB key to insert spaces, not TAB characters (a cardinal sin).
-""
-set shiftwidth=2
+"" Indentation
+
+" see https://vim.fandom.com/wiki/Indenting_source_code
+" insert spaces instead of tabs
 set expandtab
+" number of spaces to use for each step of (auto)indent
+set shiftwidth=2
+" number of spaces between tabs not at start of line
+" eg pressing 123<tab>1<tab> with following settings:
+" softtabstop=2:^123 1 $
+" softtabstop=5:^123  1    $
+set softtabstop=2
+" number of spaces that a tab char accounts for, set equal to shiftwidth else pressing tab will insert mix of tab and space
+set tabstop=2
+" copy indent from current line when starting a new line
 set autoindent
-set smarttab
+" show whitespaces
 set list
 set listchars=eol:↓,tab:>-,space:·,trail:·,nbsp:‡,extends:»,precedes:«
+" filetype specific indentation settings
+filetype plugin indent on
+autocmd FileType python setlocal softtabstop=2 shiftwidth=2
+autocmd FileType cpp setlocal softtabstop=4 shiftwidth=4
+autocmd FileType go setlocal softtabstop=2 shiftwidth=2 noexpandtab
 
-""  Origami.
-""
-""  Show all folds.
-""
-set foldenable
-""  Open most folds by default by setting the starting fold level
-""  to 10.
-""
-set foldlevelstart=10
-""  Set maximum number of nested folds to 10.
-""
-set foldnestmax=10
-""  Fold based on indentation.
-""  (**May need to change this to marker for C and Hoon**.)
-""
-set foldmethod=indent
-
-""  Mappings
-""
-""  Speed
-""
-""  Map leader key to ";" .
-""
-let mapleader=";"
-""  Press 'fd' fast in insert and visual mode to escape.
-""
+" press 'fd' fast in insert and visual mode to escape.
 inoremap fd <esc>
 vnoremap fd <esc>
 ""  Set time length for mapped sequence to complete to 50ms.
@@ -299,14 +298,16 @@ set ttimeoutlen=50
 ""  I was in insert mode.
 ""
 nnoremap gV `[v`]
-""  Search
-""
-""  Clear search highlight.
-""
-" nnoremap <leader><space> :nohlsearch<CR>
-""  Folding
-""
-""  Open/close folds.
-""
-" nnoremap <space> za
 
+" persistent undo history
+set undofile
+set undodir=~/.config/nvim/undo
+
+" allow left/right keys to navigate to prev/next lines at start/end of lines
+set whichwrap=b,s,h,l,<,>
+" vsplit on right side
+set splitright
+" scroll offset - lines to preview at top and bottom of buffer when navigating up and down, big number to keep cursor in middle
+set scrolloff=999
+" disable adding newline on end of file on save
+set nofixendofline

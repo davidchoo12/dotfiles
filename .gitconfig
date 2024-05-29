@@ -4,7 +4,8 @@
 	signingkey = F11F77AC9209DAE0 # on personal ubuntu
 [core]
 	editor = nvim
-	excludesfile = /Users/dchoo/.gitignore_global
+	excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes_global
 [help]
 	autocorrect = 1
 [commit]
@@ -17,3 +18,19 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pull]
+	rebase = false
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	syntax-theme = zenburn
+	line-numbers = true
+	side-by-side = false
+	navigate = true
+[interactive]
+	diffFilter = delta --color-only
+[filter "removeprintln"]
+	clean = sed '/println/d'
