@@ -62,7 +62,8 @@ nvim +PlugInstall +qall > /dev/null
 
 # fonts
 # install Segoe UI, src https://github.com/mrbvrz/segoe-ui-linux
-# install meslo nerd font for p10k https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k
+# if windows, install Caskaydia Mono Nerd Font Mono for p10k https://www.nerdfonts.com/font-downloads
+# else, install meslo nerd font for p10k https://github.com/romkatv/powerlevel10k/#meslo-nerd-font-patched-for-powerlevel10k
 # found UI bug in gnome-font-viewer https://github.com/microsoft/cascadia-code/issues/50#issuecomment-633187177
 # use gnome-tweaks fonts to update system fonts
 
