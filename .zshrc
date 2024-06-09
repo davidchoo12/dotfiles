@@ -86,4 +86,5 @@ if [ -f '/Users/dchoo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dchoo/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dchoo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dchoo/google-cloud-sdk/completion.zsh.inc'; fi
 
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+# fzf disable ctrl+T and alt+C shortcuts
+FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)
