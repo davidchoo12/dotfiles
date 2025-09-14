@@ -28,7 +28,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'valloric/youcompleteme'
 " Plug 'ajh17/vimcompletesme'
 " Plug 'mattn/emmet-vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" for autocomplete like intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " tsx syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -36,9 +37,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'eslint/eslint'
 Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
+" elixir syntax highlighting
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -86,6 +89,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " show hidden files
 let g:NERDTreeShowHidden = 1
 
+" coc extensions to install
+let g:coc_global_extensions = ['coc-git', 'coc-pyright', 'coc-format-json', 'coc-go']
+" map ctrl space to trigger autocomplete
+inoremap <silent><expr> <C-space> coc#refresh()
+" map tab and enter to accept selected completion
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " ale configs
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
@@ -97,9 +113,9 @@ let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " map ctrl backspace to delete word
 " inoremap <del> <esc>dbi
@@ -108,8 +124,10 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 noremap <C-s> <esc>:w<cr>
 " map normal mode H to home
 nnoremap H ^
+" map normal mode L to end
+nnoremap L $
 
-" map normal mode ; to end
+" map normal mode ; to insert at end
 nnoremap ; A
 
 " map for moving lines

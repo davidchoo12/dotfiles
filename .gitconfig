@@ -23,3 +23,5 @@
 	diffFilter = delta --color-only
 [filter "removeprintln"]
 	clean = sed '/println/d'
+[push]
+	autoSetupRemote = true

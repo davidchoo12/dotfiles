@@ -11,7 +11,7 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins list
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent aws dotenv extract nvm)
+plugins=(git z zsh-syntax-highlighting zsh-autosuggestions colored-man-pages gpg-agent aws dotenv nvm pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,3 +88,13 @@ if [ -f '/Users/dchoo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dch
 
 # fzf disable ctrl+T and alt+C shortcuts
 FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# for aegislib and vscode go build cos vscode doesn't read zshenv
+export GOFLAGS="-ldflags=-checklinkname=0"
+

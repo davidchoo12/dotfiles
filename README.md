@@ -57,8 +57,16 @@ sudo apt-get update
 sudo apt install neovim
 # vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# enter nvim
+nvim
 # run :PlugInstall and exit
-nvim +PlugInstall +qall > /dev/null
+:PlugInstall
+# run :checkhealth to ensure no errors
+:checkhealth
+# (optional) install pynvim if failed to load python3 host, src https://github.com/neovim/neovim/wiki/FAQ#python-support-isnt-working
+/usr/bin/local/python3 -m pip install --upgrade pynvim
+# install autocomplete extensions
+:CocInstall
 
 # fonts
 # install Segoe UI, src https://github.com/mrbvrz/segoe-ui-linux

@@ -2,13 +2,12 @@ function open () {
   xdg-open "$*" &
 }
 alias v="nvim"
-alias dfg='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME -c status.showuntrackedfiles=no' # dotfiles git
+alias dfg='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME -c status.showuntrackedfiles=no -c user.email=7817101+davidchoo12@users.noreply.github.com -c commit.gpgsign=false' # dotfiles git
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias zshconfig="nvim ~/.zshrc"
 alias m="ncmpcpp"
 alias python="python3"
-alias pip="pip3"
-# alias sdev="ssh -A ubuntu@10.0.0.85"
+alias pip="pip3" # for the case when pyenv uses system version
 alias sdev="ssh dev"
 alias snus="ssh nus"
 alias sprod="ssh aws-prod"
@@ -35,3 +34,6 @@ kt() {
   nvim "$1.cc"
 }
 alias gloga="git log --pretty='%C(auto)%h%C(auto)%d %s %C(green)%an %C(cyan)%cd' --graph --date=relative --date-order --all"
+alias glog="git log --pretty='%C(auto)%h%C(auto)%d %s %C(green)%an %C(cyan)%cd' --graph --date=relative --date-order"
+
+alias jq='jq -C'
