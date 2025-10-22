@@ -33,6 +33,8 @@ export MANPATH=$MANPATH:/usr/local/texlive/2019/texmf-dist/doc/man
 export PATH="$PATH:$HOME/.rbenv/bin"
 
 # for pyenv (shims need to be before /usr/bin otherwise $(which python3) eval to /usr/bin/python3)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
 # for java
@@ -43,4 +45,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 export ZSH_DOTENV_PROMPT=false
 
 export NVM_DIR="$HOME/.nvm"
+
+# for snap packages
+export PATH=$PATH:/snap/bin
 

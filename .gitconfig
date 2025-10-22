@@ -25,3 +25,5 @@
 	clean = sed '/println/d'
 [push]
 	autoSetupRemote = true
+[init]
+	defaultBranch = master

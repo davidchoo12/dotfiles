@@ -123,7 +123,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # for macos, add symbolic links to open apps from terminal
 ln -s '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' /usr/local/bin/subl
 ln -s '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
+
+# pyenv
+curl https://pyenv.run | bash
+# build dependencies for installing python using pyenv
+sudo apt install build-essential libssl-dev libbz2-dev libreadline-dev libncursesw5-dev libffi-dev tk-dev libsqlite3-dev liblzma-dev
+pyenv install 3
+pyenv global 3
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+nvm install node
 ```
 
 ## List of softwares to install
 - [delta (pretty diff tool)](https://github.com/dandavison/delta/)
+- [jq](https://jqlang.github.io/jq/)
+- [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation)
+- [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
